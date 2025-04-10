@@ -5,6 +5,9 @@ import 'primeicons/primeicons.css'
 const primevueConfig = {
     theme: {
         preset: Aura,
+        options: {
+            darkModeSelector: false,
+        },
     },
 }
 
