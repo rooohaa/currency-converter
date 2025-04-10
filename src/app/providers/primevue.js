@@ -1,6 +1,7 @@
 import PrimeVue from 'primevue/config'
 import Aura from '@primeuix/themes/aura'
 import 'primeicons/primeicons.css'
+import ToastService from 'primevue/toastservice'
 
 const primevueConfig = {
     theme: {
@@ -11,4 +12,4 @@ const primevueConfig = {
     },
 }
 
-export { PrimeVue, primevueConfig }
+export { PrimeVue, primevueConfig, ToastService }
