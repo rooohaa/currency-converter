@@ -4,7 +4,8 @@ import { defineStore } from 'pinia'
 import { currencyRatesApi } from '../api'
 
 export const useCurrencyRatesStore = defineStore('currencyRates', () => {
-    const currencyRates = ref([])
+    // key value pairs (example: { eur-rub: 99.8163 })
+    const currencyRates = ref(null)
     const loading = ref(false)
 
     async function fetchCurrencyRates() {

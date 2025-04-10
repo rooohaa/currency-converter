@@ -20,7 +20,7 @@ const currencyRatesStore = useCurrencyRatesStore()
 const filteredRates = useFilteredRates()
 
 onMounted(() => {
-    if (currencyRatesStore.currencyRates.length === 0) {
+    if (!currencyRatesStore.currencyRates) {
         currencyRatesStore.fetchCurrencyRates()
     }
 })

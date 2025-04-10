@@ -8,9 +8,9 @@ export function useFilteredRates() {
     const currencyRatesStore = useCurrencyRatesStore()
 
     const filteredRates = computed(() => {
-        if (    
+        if (
             !baseCurrencyStore.baseCurrency ||
-            currencyRatesStore.currencyRates.length === 0
+            !currencyRatesStore.currencyRates
         ) {
             return []
         }
