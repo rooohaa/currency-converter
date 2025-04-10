@@ -1,13 +1,13 @@
 <template>
-    <Dropdown
-        :modelValue="baseCurrencyStore.baseCurrency"
+    <Select
+        :model-value="baseCurrencyStore.baseCurrency"
         :options="baseCurrencies"
-        @update:modelValue="baseCurrencyStore.setBaseCurrency"
+        @update:model-value="baseCurrencyStore.setBaseCurrency"
     />
 </template>
 
 <script setup>
-import Dropdown from 'primevue/dropdown'
+import Select from 'primevue/select'
 import { useBaseCurrencyStore } from '@/entities/baseCurrency'
 import { baseCurrencies } from '@/shared/config/baseCurrencies'
 

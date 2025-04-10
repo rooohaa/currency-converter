@@ -1,5 +1,5 @@
 <template>
-    <section class="m-4">
+    <section class="mt-4 mb-4">
         <div class="container">
             <currency-rates-list />
         </div>
