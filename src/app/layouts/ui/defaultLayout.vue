@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { AppHeader } from '@/widgets/AppHeader'
+import { AppHeader } from '@/widgets/appHeader'
 </script>
 
 <style scoped>
