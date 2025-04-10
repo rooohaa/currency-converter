@@ -28,7 +28,7 @@ import Card from 'primevue/card'
 
 import { useCurrencyRatesStore } from '@/entities/currencyRates'
 
-import CurrencyRow from '../components/currencyRow.vue'
+import CurrencyRow from './currencyRow.vue'
 import { useCurrencyConverter } from '../model/useCurrencyConverter'
 
 const { topRow, bottomRow, recalculateBottom, recalculateTop } =
