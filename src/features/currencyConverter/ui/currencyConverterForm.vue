@@ -10,11 +10,13 @@
                     v-model:amount="topRow.amount"
                     v-model:currency="topRow.currency"
                     :disabled="!currencyRatesStore.currencyRates"
+                    @change="recalculateBottom"
                 />
                 <currency-row
                     v-model:amount="bottomRow.amount"
                     v-model:currency="bottomRow.currency"
                     :disabled="!currencyRatesStore.currencyRates"
+                    @change="recalculateTop"
                 />
             </div>
         </template>
@@ -29,7 +31,8 @@ import { useCurrencyRatesStore } from '@/entities/currencyRates'
 import CurrencyRow from '../components/currencyRow.vue'
 import { useCurrencyConverter } from '../model/useCurrencyConverter'
 
-const { topRow, bottomRow } = useCurrencyConverter()
+const { topRow, bottomRow, recalculateBottom, recalculateTop } =
+    useCurrencyConverter()
 
 const currencyRatesStore = useCurrencyRatesStore()
 </script>

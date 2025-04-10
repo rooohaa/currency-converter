@@ -1,6 +1,7 @@
 import { useToast } from 'primevue/usetoast'
 
 export function useAppToast() {
+    const DEFAULT_LIFE = 3000
     const toast = useToast()
 
     return {
@@ -9,7 +10,15 @@ export function useAppToast() {
                 severity: 'success',
                 summary,
                 detail: message,
-                life: 3000,
+                life: DEFAULT_LIFE,
+            })
+        },
+        info(message, summary = 'Информация') {
+            toast.add({
+                severity: 'info',
+                summary,
+                detail: message,
+                life: DEFAULT_LIFE,
             })
         },
         error(message, summary = 'Ошибка') {
@@ -17,7 +26,7 @@ export function useAppToast() {
                 severity: 'error',
                 summary,
                 detail: message,
-                life: 4000,
+                life: DEFAULT_LIFE,
             })
         },
     }

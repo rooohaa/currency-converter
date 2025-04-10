@@ -4,34 +4,33 @@
             <InputGroupAddon>
                 <Select
                     :model-value="currency"
-                    @update:model-value="emit('update:currency', $event)"
+                    @update:model-value="updateCurrency"
                     :options="baseCurrencies"
                     :disabled="disabled"
                 />
             </InputGroupAddon>
 
-            <InputNumber
+            <InputText
+                type="number"
                 :model-value="amount"
-                @update:model-value="emit('update:amount', $event)"
-                placeholder="Введите значение"
+                @update:model-value="updateAmount"
                 :disabled="disabled"
+                placeholder="Введите значение"
             />
         </InputGroup>
     </div>
 </template>
 
 <script setup>
-import InputNumber from 'primevue/inputnumber'
+import InputText from 'primevue/inputtext'
 import Select from 'primevue/select'
-
 import InputGroup from 'primevue/inputgroup'
 import InputGroupAddon from 'primevue/inputgroupaddon'
-
 import { baseCurrencies } from '@/shared/config/baseCurrencies'
 
 const props = defineProps({
     amount: {
-        type: [Number, null],
+        type: [Number, String, null],
         required: true,
     },
     currency: {
@@ -44,5 +43,27 @@ const props = defineProps({
     },
 })
 
-const emit = defineEmits(['update:amount', 'update:currency'])
+const emit = defineEmits(['update:amount', 'update:currency', 'change'])
+
+function updateAmount(value) {
+    emit('update:amount', value)
+    emit('change')
+}
+
+function updateCurrency(value) {
+    emit('update:currency', value)
+    emit('change')
+}
 </script>
+
+<style scoped>
+.p-inputtext[type='number']::-webkit-inner-spin-button,
+.p-inputtext[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.p-inputtext[type='number'] {
+    -moz-appearance: textfield;
+}
+</style>
