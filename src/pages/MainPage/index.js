@@ -1,2 +1,2 @@
-import MainPage from './ui/mainPage.vue'
-export default MainPage
+import mainPage from './ui/mainPage.vue'
+export default mainPage

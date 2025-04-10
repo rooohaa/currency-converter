@@ -1,2 +1,2 @@
-import ConversionPage from './ui/conversionPage.vue'
-export default ConversionPage
+import conversionPage from './ui/conversionPage.vue'
+export default conversionPage
