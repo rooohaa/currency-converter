@@ -6,6 +6,7 @@
                     :model-value="currency"
                     @update:model-value="emit('update:currency', $event)"
                     :options="baseCurrencies"
+                    :disabled="disabled"
                 />
             </InputGroupAddon>
 
@@ -13,6 +14,7 @@
                 :model-value="amount"
                 @update:model-value="emit('update:amount', $event)"
                 placeholder="Введите значение"
+                :disabled="disabled"
             />
         </InputGroup>
     </div>
@@ -35,6 +37,10 @@ const props = defineProps({
     currency: {
         type: String,
         required: true,
+    },
+    disabled: {
+        type: Boolean,
+        default: false,
     },
 })
 

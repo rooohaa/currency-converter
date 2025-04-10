@@ -1,7 +1,7 @@
 <template>
     <section class="mt-4 mb-4">
         <div class="container">
-            <currency-converter-form v-if="currencyRatesStore.currencyRates" />
+            <currency-converter-form />
         </div>
     </section>
 </template>

@@ -13,7 +13,7 @@
                     stroke-width="6"
                 />
             </div>
-            <ul v-else class="mt-4 mb-4">
+            <ul v-else-if="rates.length > 0" class="mt-4 mb-4">
                 <li v-for="(rate, idx) in rates" :key="rate.to">
                     <span>1 {{ rate.from }} = </span>
                     <span class="font-semibold">
@@ -22,6 +22,9 @@
                     <Divider v-if="idx !== rates.length - 1" />
                 </li>
             </ul>
+            <Message v-else severity="error">
+                Не удалось получить курсы валют
+            </Message>
         </template>
     </Card>
 </template>
@@ -31,6 +34,7 @@ import Card from 'primevue/card'
 import Divider from 'primevue/divider'
 import ProgressSpinner from 'primevue/progressspinner'
 import Button from 'primevue/button'
+import Message from 'primevue/message'
 
 import { formatCurrencyValue } from '@/shared/lib/formatCurrencyValue'
 
