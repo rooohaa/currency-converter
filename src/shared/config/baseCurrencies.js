@@ -1,9 +1,7 @@
 export const baseCurrencies = ['USD', 'EUR', 'RUB']
 
-export const baseCurrenciesMap = {
+export const baseCurrenciesMap = Object.freeze({
     USD: 'USD',
     EUR: 'EUR',
     RUB: 'RUB',
-}
-
-export const STORAGE_KEY = 'baseCurrency'
+})

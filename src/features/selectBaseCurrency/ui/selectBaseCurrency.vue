@@ -8,8 +8,8 @@
 
 <script setup>
 import Dropdown from 'primevue/dropdown'
-import { baseCurrencies } from '@/entities/baseCurrency'
 import { useBaseCurrencyStore } from '@/entities/baseCurrency'
+import { baseCurrencies } from '@/shared/config/baseCurrencies'
 
 const baseCurrencyStore = useBaseCurrencyStore()
 </script>
