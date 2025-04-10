@@ -3,11 +3,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
     {
         path: '/',
-        component: () => import('@/pages/mainPage/ui/mainPage.vue'),
+        component: () => import('@/pages/mainPage'),
     },
     {
         path: '/convert',
-        component: () => import('@/pages/conversionPage/ui/conversionPage.vue'),
+        component: () => import('@/pages/conversionPage'),
     },
 ]
 
